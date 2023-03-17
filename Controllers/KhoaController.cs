@@ -28,17 +28,17 @@ namespace WebAPI.Controllers
         {
             return Ok(await _khoaService.GetByID(id));
         }
-        [HttpPost("Post")]
+        [HttpPut("Put")]
         public async Task<ActionResult<ServiceReponse<List<GetKhoa>>>> AddKhoa(AddKhoa newKhoa)
         {
             return Ok(await _khoaService.AddKHoa(newKhoa));
         }
-        [HttpPut("Put")]
+        [HttpPost("Post")]
         public async Task<ActionResult<ServiceReponse<List<GetKhoa>>>> UpdateKhoa(UpdateKhoa newKhoa)
         {
             return Ok(await _khoaService.UpdateKhoa(newKhoa));
         }
-        [HttpDelete("Delete")]
+        [HttpDelete("Delete={id}")]
         public async Task<ActionResult<ServiceReponse<List<GetKhoa>>>> DeleteKhoa(int id)
         {
             return Ok(await _khoaService.DeleteKhoa(id));

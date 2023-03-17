@@ -15,5 +15,6 @@ namespace WebAPI.Data
         public DbSet<Character> Characters => Set<Character>();
         public DbSet<Khoa> Khoas => Set<Khoa>();
         public DbSet<GiangVien> GiangViens => Set<GiangVien>();
+        public DbSet<Lop> Lops => Set<Lop>();
     }
 }

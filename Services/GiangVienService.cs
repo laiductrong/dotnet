@@ -17,7 +17,9 @@ namespace WebAPI.Services
         public async Task<ServiceReponse<List<GetGiangVien>>> AddGiangVien(AddGiangVien newGiangVien)
         {
             var serviceReponse = new ServiceReponse<List<GetGiangVien>>();
+            //tìm khoa có trong database không
             var khoaOfGV = await _dataContext.Khoas.FirstOrDefaultAsync(x => x.Id == newGiangVien.khoaId);
+            //khởi tạo giảng viên để thêm vào database
             var giangVien = new GiangVien();
             try
             {
@@ -36,7 +38,7 @@ namespace WebAPI.Services
                 else
                 {
                     serviceReponse.Data = null;
-                    serviceReponse.Message =" add new GiangVien fail";
+                    serviceReponse.Message ="don't have Khoa with ID = "+ newGiangVien.khoaId;
                     serviceReponse.Success = false;
                 }
                 // await _dataContext.GiangViens.AddAsync(_imapper.Map<GiangVien>(newGiangVien));
@@ -129,9 +131,9 @@ namespace WebAPI.Services
             {
                 var gianVienUpdate = await _dataContext.GiangViens.Include(x => x.khoa).FirstOrDefaultAsync(x => x.Id == newGiangVien.Id);
                 var khoaOfGV = await _dataContext.Khoas.FirstOrDefaultAsync(x => x.Id == newGiangVien.khoaId);
-                var giangVien = new GiangVien();
                 if (gianVienUpdate is not null && khoaOfGV is not null)
                 {
+                    var giangVien = new GiangVien();
                     gianVienUpdate.tenGV = newGiangVien.tenGV;
                     gianVienUpdate.chuyenNganh = newGiangVien.chuyenNganh;
                     gianVienUpdate.khoa = khoaOfGV;
@@ -143,7 +145,7 @@ namespace WebAPI.Services
                 else
                 {
                     serviceReponse.Data = null;
-                    serviceReponse.Message = " update GiangVien fail";
+                    serviceReponse.Message = "ID's GiangVien or ID's Khoa don't have in database!";
                     serviceReponse.Success = false;
                     return serviceReponse;
                 }

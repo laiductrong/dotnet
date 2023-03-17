@@ -25,17 +25,17 @@ namespace WebAPI.Controllers
         {
             return Ok(await _giangVienService.GetByID(id));
         }
-        [HttpPost("Post")]
+        [HttpPut("Put")]
         public async Task<ActionResult<ServiceReponse<List<GetGiangVien>>>> AddGiangVien(AddGiangVien newGiangVien)
         {
             return Ok(await _giangVienService.AddGiangVien(newGiangVien));
         }
-        [HttpPut("updateGiangVien")]
+        [HttpPost("updateGiangVien")]
         public async Task<ActionResult<ServiceReponse<List<GetGiangVien>>>> UpdateGiangVien(UpdateGiangVien newGiangVien)
         {
             return Ok(await _giangVienService.UpdateGiangVien(newGiangVien));
         }
-        [HttpDelete("delete")]
+        [HttpDelete("delete={id}")]
         public async Task<ActionResult<ServiceReponse<List<GetGiangVien>>>> DeleteGiangVien(int id)
         {
             return Ok(await _giangVienService.DeleteGiangVien(id));
