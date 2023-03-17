@@ -7,6 +7,6 @@ namespace WebAPI.Dtos.KhoaDto
 {
     public class AddKhoa
     {
-        
+        public string tenKhoa { get; set; } = "ten khoa";
     }
 }

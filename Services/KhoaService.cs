@@ -17,10 +17,13 @@ namespace WebAPI.Services
         }
         public async Task<ServiceReponse<List<GetKhoa>>> AddKHoa(AddKhoa newKhoa)
         {
+            var addNewKhoa = new Khoa();
+            addNewKhoa.Id = 0;
+            addNewKhoa.tenKhoa = newKhoa.tenKhoa;
             var serviceReponse = new ServiceReponse<List<GetKhoa>>();
-            await _dataContext.AddAsync(_imapper.Map<Khoa>(newKhoa));
+            await _dataContext.Khoas.AddAsync(addNewKhoa);
             await _dataContext.SaveChangesAsync();
-            //get list
+            // //get list
             var khoas = await _dataContext.Khoas.ToListAsync();
             //convert to list to push in serviceReponse.Data
             serviceReponse.Data = khoas.Select(x => _imapper.Map<GetKhoa>(x)).ToList();

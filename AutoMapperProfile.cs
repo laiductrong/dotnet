@@ -15,6 +15,22 @@ namespace WebAPI
             CreateMap<Khoa, GetKhoa>();
             CreateMap<Khoa, AddKhoa>();
             CreateMap<Khoa, UpdateKhoa>();
+            CreateMap<GiangVien, GetGiangVien>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.tenGV, opt => opt.MapFrom(src => src.tenGV))
+                .ForMember(dest => dest.chuyenNganh, opt => opt.MapFrom(src => src.chuyenNganh))
+                .ForMember(dest => dest.khoaId, opt => opt.MapFrom(src => src.khoa.Id));
+
+            CreateMap<GiangVien, AddGiangVien>()
+                // .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.tenGV, opt => opt.MapFrom(src => src.tenGV))
+                .ForMember(dest => dest.chuyenNganh, opt => opt.MapFrom(src => src.chuyenNganh))
+                .ForMember(dest => dest.khoaId, opt => opt.MapFrom(src => src.khoa.Id));
+            CreateMap<GiangVien, UpdateGiangVien>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.tenGV, opt => opt.MapFrom(src => src.tenGV))
+                .ForMember(dest => dest.chuyenNganh, opt => opt.MapFrom(src => src.chuyenNganh))
+                .ForMember(dest => dest.khoaId, opt => opt.MapFrom(src => src.khoa.Id));
         }
     }
 }

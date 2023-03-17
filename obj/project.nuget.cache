@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O9vs14soTXJ9sfvkcP6it3ZQ2QJHOG1vHEHoFJRc+P0oTBYH2Y0lBiI5OiHhfZL4g6brz1s/tFO4dIZYtWlfBQ==",
+  "dgSpecHash": "1Kr85ShSUblXypj0x3wCmZrHgsHqrnMA33Yv5BvVt/vE968C3SY+QRE57FxyTHqtHa6RPGn7RILulCVKDHeOWQ==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.3\\microsoft.entityframeworkcore.design.7.0.3.nupkg.sha512",
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.3\\microsoft.entityframeworkcore.relational.7.0.3.nupkg.sha512",
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.3\\microsoft.entityframeworkcore.sqlserver.7.0.3.nupkg.sha512",
+    "C:\\Users\\trong\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.3\\microsoft.entityframeworkcore.tools.7.0.3.nupkg.sha512",
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\trong\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",

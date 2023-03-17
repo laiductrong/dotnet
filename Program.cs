@@ -2,6 +2,7 @@ global using WebAPI.Models;
 global using WebAPI.Services;
 global using WebAPI.Dtos.Character;
 global using WebAPI.Dtos.KhoaDto;
+global using WebAPI.Dtos.GiangVienDto;
 global using AutoMapper;
 global using WebAPI.Data;
 global using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ICharacterService, CharacterService>();
 builder.Services.AddScoped<IKhoaService, KhoaService>();
+builder.Services.AddScoped<IGiangVienService, GiangVienService>();
 
 var app = builder.Build();
 

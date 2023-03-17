@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Data;
 
@@ -10,9 +11,11 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230315172658_dbKhoa")]
+    partial class dbKhoa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,32 +56,6 @@ namespace WebAPI.Migrations
                     b.ToTable("Characters");
                 });
 
-            modelBuilder.Entity("WebAPI.Models.GiangVien", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("chuyenNganh")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("khoaId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("tenGV")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("khoaId");
-
-                    b.ToTable("GiangViens");
-                });
-
             modelBuilder.Entity("WebAPI.Models.Khoa", b =>
                 {
                     b.Property<int>("Id")
@@ -94,17 +71,6 @@ namespace WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Khoas");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.GiangVien", b =>
-                {
-                    b.HasOne("WebAPI.Models.Khoa", "khoa")
-                        .WithMany()
-                        .HasForeignKey("khoaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("khoa");
                 });
 #pragma warning restore 612, 618
         }
