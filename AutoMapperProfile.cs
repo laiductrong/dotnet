@@ -43,6 +43,35 @@ namespace WebAPI
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.TenLop, opt => opt.MapFrom(src => src.TenLop))
                 .ForMember(dest => dest.khoaId, opt => opt.MapFrom(src => src.khoa.Id));
+
+            CreateMap<SinhVien, GetSinhVien>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.tenSV, opt => opt.MapFrom(src => src.tenSV))
+                .ForMember(dest => dest.gioiTinh, opt => opt.MapFrom(src => src.gioiTinh))
+                .ForMember(dest => dest.ngaySinh, opt => opt.MapFrom(src => src.ngaySinh))
+                .ForMember(dest => dest.tenLop, opt => opt.MapFrom(src => src.lop.TenLop));
+            CreateMap<SinhVien, AddSinhVien>()
+                // .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.tenSV, opt => opt.MapFrom(src => src.tenSV))
+                .ForMember(dest => dest.gioiTinh, opt => opt.MapFrom(src => src.gioiTinh))
+                .ForMember(dest => dest.ngaySinh, opt => opt.MapFrom(src => src.ngaySinh))
+                .ForMember(dest => dest.lopId, opt => opt.MapFrom(src => src.lop.Id));
+            CreateMap<SinhVien, UpdateSinhVien>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.tenSV, opt => opt.MapFrom(src => src.tenSV))
+                .ForMember(dest => dest.gioiTinh, opt => opt.MapFrom(src => src.gioiTinh))
+                .ForMember(dest => dest.ngaySinh, opt => opt.MapFrom(src => src.ngaySinh))
+                .ForMember(dest => dest.lopId, opt => opt.MapFrom(src => src.lop.Id));
+
+            CreateMap<MonHoc, GetMonHoc>();
+            CreateMap<MonHoc, AddMonHoc>();
+                // .ForMember(dest => dest.tenMH, opt => opt.MapFrom(src => src.tenMH))
+                // .ForMember(dest => dest.soTiet, opt => opt.MapFrom(src => src.soTiet));
+            CreateMap<MonHoc, UpdateMonHoc>();
+
+            CreateMap<DiemThi, GetDiemThi>();
+            CreateMap<DiemThi, AddDiemThi>();
+            CreateMap<DiemThi, UpdateMonHoc>();
         }
     }
 }

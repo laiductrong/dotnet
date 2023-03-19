@@ -26,7 +26,7 @@ namespace WebAPI.Services
                     lop.Id = 0;
                     lop.TenLop = newLop.TenLop;
                     lop.khoa = checkKhoa;
-                    await _dataContext.AddAsync(lop);
+                    await _dataContext.Lops.AddAsync(lop);
                     await _dataContext.SaveChangesAsync();
                     serviceReponse.Data = (await _dataContext.Lops.Include(x=> x.khoa).ToListAsync()).Select(x => _imapper.Map<GetLop>(x)).ToList();
                     serviceReponse.Message = "Add Lop success";
