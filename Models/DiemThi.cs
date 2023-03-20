@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace WebAPI.Models
 {
     [Keyless]
+    // [PrimaryKey(nameof(sinhVienId), nameof(monHocId))]
     public class DiemThi
     {
         public SinhVien sinhVienId { get; set; }

@@ -69,7 +69,11 @@ namespace WebAPI
                 // .ForMember(dest => dest.soTiet, opt => opt.MapFrom(src => src.soTiet));
             CreateMap<MonHoc, UpdateMonHoc>();
 
-            CreateMap<DiemThi, GetDiemThi>();
+            CreateMap<DiemThi, GetDiemThi>()
+                .ForMember(dest => dest.tenSinhVien, opt => opt.MapFrom(src=> src.sinhVienId.tenSV))
+                .ForMember(dest => dest.tenMonHoc, opt => opt.MapFrom(src=> src.monHocId.tenMH))
+                .ForMember(dest => dest.lanThi, opt => opt.MapFrom(src=> src.lanThi))
+                .ForMember(dest => dest.diem, opt => opt.MapFrom(src=> src.diem));
             CreateMap<DiemThi, AddDiemThi>();
             CreateMap<DiemThi, UpdateMonHoc>();
         }

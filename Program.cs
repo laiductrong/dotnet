@@ -30,6 +30,7 @@ builder.Services.AddScoped<IGiangVienService, GiangVienService>();
 builder.Services.AddScoped<ILopService, LopService>();
 builder.Services.AddScoped<IMonHocService, MonHocService>();
 builder.Services.AddScoped<ISinhVienService, SinhVienService>();
+builder.Services.AddScoped<IDiemThiService, DiemThiService>();
 
 var app = builder.Build();
 
