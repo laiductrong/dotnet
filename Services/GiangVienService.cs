@@ -133,7 +133,7 @@ namespace WebAPI.Services
                 var khoaOfGV = await _dataContext.Khoas.FirstOrDefaultAsync(x => x.Id == newGiangVien.khoaId);
                 if (gianVienUpdate is not null && khoaOfGV is not null)
                 {
-                    var giangVien = new GiangVien();
+                    // var giangVien = new GiangVien();
                     gianVienUpdate.tenGV = newGiangVien.tenGV;
                     gianVienUpdate.chuyenNganh = newGiangVien.chuyenNganh;
                     gianVienUpdate.khoa = khoaOfGV;

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Dtos.DiemThiDto
 {
-    public class GetDiemThi
+    public class DThi
     {
-        public string? tenSinhVien { get; set; }
-        public string? tenMonHoc { get; set; }
+        public SinhVien tenSinhVien { get; set; }
+        public MonHoc tenMonHoc { get; set; }
         public int lanThi { get; set; }
         public float diem { get; set; } = 0;
     }
